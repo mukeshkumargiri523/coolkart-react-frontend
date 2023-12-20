@@ -1,0 +1,20 @@
+@import "../../css-config/mixins.scss";
+.main-category-content {
+  margin: 40px 0;
+  @include md {
+    margin: 70px 0;
+  }
+  .layout {
+    max-width: calc(100% - 20px);
+    margin: 0 auto;
+    @include md {
+      max-width: 1350px;
+    }
+  }
+  .category-title {
+    font-size: 28px;
+    @include md {
+      font-size: 38px;
+    }
+  }
+}

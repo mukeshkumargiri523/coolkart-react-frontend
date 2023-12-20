@@ -1,0 +1,73 @@
+@import "../../css-config/mixins.scss";
+
+footer {
+  border-top: 3px solid darkcyan;
+  width: 100%;
+  background-color: rgba(130, 211, 213, 0.8);
+  .footer-content {
+    padding: 50px 30px;
+    background-color: rgb(130, 211, 213);
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: wrap;
+    gap: 20px;
+    @include md {
+      justify-content: space-between;
+      padding: 50px 10px;
+    }
+    .col {
+      width: 270px;
+      .title {
+        margin-bottom: 20px;
+        font-size: 20px;
+      }
+      .text {
+        color: rgba(35, 35, 109, 0.7);
+        font-size: 16px;
+      }
+      .contact-items {
+        display: flex;
+
+        margin-bottom: 10px;
+        svg {
+          flex-shrink: 0;
+          margin-right: 10px;
+          margin-top: 5px;
+          color: darkblue;
+        }
+      }
+      .col {
+        &.text {
+          margin-bottom: 10px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .bottom-bar {
+    border-top: 2px solid rgba(209, 66, 66, 0.3);
+    .bottom-bar-content {
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      gap: 20px;
+      @include md {
+        padding: 0;
+        height: 60px;
+        max-width: 1200px;
+        margin: 0 25px;
+
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+      }
+      .text {
+        font-size: 14px;
+        color: rgba(69, 53, 53, 0.5);
+      }
+    }
+  }
+}

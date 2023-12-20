@@ -1,0 +1,112 @@
+@import "../../../css-config/mixins.scss";
+.search-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 150;
+  top: 0;
+  left: 0;
+  background-color: rgb(222, 234, 237);
+  animation: slideSearchWindow 0.6s ease-out forwards;
+  .form-field {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px 60px;
+    border-bottom: 1px solid rgba(11, 48, 112, 0.634);
+    position: relative;
+    @include md {
+      padding: 30px 0;
+    }
+    input {
+      width: 100%;
+      padding: 10px 0;
+      max-width: 1100px;
+      height: 60px;
+      text-align: center;
+      font-size: 25px;
+      font-weight: 500;
+      color: rgba(47, 39, 39, 0.83);
+      outline: none;
+      border: 2px solid blueviolet;
+      border-radius: 10px;
+      text-transform: uppercase;
+      @include md {
+        font-size: 40px;
+      }
+    }
+    svg {
+      position: absolute;
+      font-size: 28px;
+      right: 20px;
+      top: 40%;
+    }
+  }
+  .serach-reasult-container {
+    max-width: calc(100% - 30px);
+    margin: 0 auto;
+    @include md {
+      max-width: 750px;
+    }
+    .search-results {
+      height: calc(100vh - 120px);
+      overflow: auto;
+      margin: 20px auto;
+      @include md {
+        height: calc(100vh - 150px);
+      }
+      .search-result-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 0;
+        background-color: rgba(192, 207, 212, 0.854);
+
+        border-bottom: 2px solid olive;
+        cursor: pointer;
+        .img-container {
+          margin-left: 20px;
+          background-color: rgba(0, 0, 0, 0.5);
+          width: 70px;
+          width: 70px;
+          flex-shrink: 0;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+        .prod-details {
+          overflow: hidden;
+          padding: 10px;
+
+          .name {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            font-size: 20px;
+            line-height: 1.2;
+            margin-bottom: 5px;
+            font-weight: 500;
+            padding-right: 25px;
+          }
+          .desc {
+            display: block;
+            line-height: 1.1;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            font-size: 17px;
+          }
+        }
+      }
+    }
+  }
+}
+@keyframes slideSearchWindow {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

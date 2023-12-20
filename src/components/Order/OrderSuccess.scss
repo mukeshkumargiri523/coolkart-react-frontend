@@ -1,0 +1,78 @@
+@import "../../css-config/mixins.scss";
+
+.order-success {
+  max-width: 100%;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-height: 700px;
+  background-image: linear-gradient(
+    to bottom,
+    rgb(89, 14, 228),
+    rgb(29, 141, 254)
+  );
+  @include md {
+    height: calc(100vh - 120px);
+  }
+  .order-heading {
+    margin-top: 50px;
+    color: sandybrown;
+    text-transform: uppercase;
+    font-size: 40px;
+    font-style: italic;
+    padding-bottom: 20px;
+    border-bottom: 2px solid orangered;
+  }
+  .order-container {
+    max-width: 580px;
+
+    margin: 50px auto;
+    border: 2px solid rgb(68, 2, 68);
+    border-radius: 30px;
+    object-fit: contain;
+    overflow: hidden;
+    padding: 20px;
+    @include md {
+      max-width: 780px;
+    }
+    .order-id {
+      background-color: rgb(93, 6, 93);
+      color: white;
+      height: 100px;
+      padding-top: 25px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      font-size: 30px;
+      line-height: 1.2;
+      margin-bottom: 1px;
+      font-weight: 500;
+      padding-left: 25px;
+      padding-right: 25px;
+      border-start-start-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+    .order-name {
+      background-color: rgb(6, 93, 61);
+      padding-top: 20px;
+      padding-left: 10px;
+      height: 60px;
+
+      border-bottom: 2px solid rgba(101, 13, 13, 0.787);
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      font-size: 20px;
+      line-height: 1.2;
+      color: rgb(154, 191, 224);
+      font-weight: 500;
+      padding-right: 25px;
+      span {
+        color: rgb(210, 227, 242);
+      }
+    }
+  }
+}

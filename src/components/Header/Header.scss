@@ -1,0 +1,107 @@
+@import "../../css-config/mixins.scss";
+
+.main-header {
+  width: 100%;
+  padding: 0 25px;
+  background-color: #275ec5;
+  color: rgb(247, 244, 240);
+  border-bottom: 3px solid rgb(5, 3, 63, 0.7);
+  z-index: 99;
+  @include sm {
+    background-color: #3c6cc4;
+    color: rgba(247, 244, 240, 0.9);
+  }
+  @include md {
+    padding: 0 40px;
+    background-color: #6789c8;
+    color: rgba(247, 244, 240, 0.8);
+  }
+
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 55px;
+    max-width: 1150px;
+    margin: 0 auto;
+    @include md {
+      height: 75px;
+    }
+    .left {
+      list-style: none;
+      display: none;
+      gap: 28px;
+      @include md {
+        display: flex;
+      }
+      li {
+        font-size: 19px;
+        font-weight: 600;
+        text-transform: uppercase;
+        cursor: pointer;
+      }
+      li:hover {
+        color: burlywood;
+      }
+    }
+
+    .center {
+      font-size: 35px;
+      font-weight: 600;
+      color: white;
+      cursor: pointer;
+      @include md {
+        font-size: 40px;
+        position: absolute;
+        left: 45%;
+      }
+    }
+    .right {
+      display: flex;
+      cursor: pointer;
+      align-items: center;
+      gap: 20px;
+      @include md {
+        gap: 25px;
+      }
+      svg {
+        font-size: 25px;
+        font-weight: 500;
+      }
+      svg:hover {
+        color: burlywood;
+      }
+      .cart-icon {
+        position: relative;
+        span {
+          min-width: 22px;
+          min-height: 18px;
+          text-align: center;
+          background-color: #0ba050;
+          padding: 1px;
+
+          position: absolute;
+          top: -5px;
+          right: -13px;
+          font-size: 16px;
+          line-height: 1;
+          border-radius: 12px;
+        }
+      }
+    }
+  }
+  &.sticky-header {
+    position: sticky;
+    top: 0;
+    animation: stickyHeader 0.5s ease forwards;
+  }
+}
+
+@keyframes stickyHeader {
+  0% {
+    transform: translateY(-75px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
